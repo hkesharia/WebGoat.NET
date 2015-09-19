@@ -45,6 +45,7 @@
       </EnvironmentVariables>
     </EnvironmentVariables>
     <Prefer32Bit>false</Prefer32Bit>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -56,6 +57,7 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Prefer32Bit>false</Prefer32Bit>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -64,6 +66,10 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -103,9 +109,6 @@
     <Reference Include="MySql.Web, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
       <HintPath>lib\mysql.web.dll</HintPath>
     </Reference>
-    <Reference Include="log4net">
-      <HintPath>lib\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.Data.Sqlite">
       <HintPath>lib\Mono.Data.Sqlite.dll</HintPath>
     </Reference>
@@ -116,6 +119,7 @@
     <Content Include="Content\ForgotPassword.aspx" />
     <Content Include="Content\UploadPathManipulation.aspx" />
     <Content Include="Global.asax" />
+    <None Include="IIS.pubxml" />
     <None Include="Resources\client-scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Resources\client-scripts\jquery-1.10.2.js" />
     <Content Include="Resources\client-scripts\jquery-1.10.2.min.js" />
@@ -1188,7 +1192,6 @@
     <None Include="DB_Scripts\datafiles\products.txt" />
     <None Include="DB_Scripts\datafiles\products_old.txt" />
     <None Include="DB_Scripts\datafiles\securityquestions.txt" />
-    <None Include="DB_Scripts\products\.DS_Store" />
     <None Include="App_Data\XmlInjectionUsers.xml" />
     <None Include="DB_Scripts\create_webgoatcoins_sqlite3.sql" />
   </ItemGroup>
