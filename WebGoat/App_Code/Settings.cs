@@ -35,10 +35,11 @@ namespace OWASP.WebGoat.NET.App_Code
                 string configPath = Path.Combine(PARENT_CONFIG_PATH, DefaultConfigName);
                 DefaultConfigPath = server.MapPath(configPath);
 
-                RootDir = server.MapPath(".");
+                RootDir = server.MapPath("~");
 
                 log.Debug("DYLD_FALLBACK_LIBRARY_PATH: " + Environment.GetEnvironmentVariable("DYLD_FALLBACK_LIBRARY_PATH"));
                 log.Debug("PWD: " + Environment.CurrentDirectory);
+				log.Debug("RootDir: " + RootDir);
 
                 //By default if there's no config let's create a sqlite db.
                 string defaultConfigPath = DefaultConfigPath;
@@ -50,8 +51,7 @@ namespace OWASP.WebGoat.NET.App_Code
                 {
                     ConfigFile file = new ConfigFile(defaultConfigPath);
 
-                    file.Set(DbConstants.KEY_DB_TYPE, DbConstants.DB_TYPE_SQLITE);
-                    file.Set(DbConstants.KEY_FILE_NAME, sqlitePath);
+                    file.Set(DbConstants.KEY_DB_TYPE, DbConstants.DB_TYPE_MYSQL);
                     file.Save();
 
                     CurrentConfigFile = file;
