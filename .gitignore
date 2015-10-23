@@ -15,6 +15,7 @@ x64/
 bld/
 [Bb]in/
 [Oo]bj/
+WebGoat/IIS.pubxml
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
